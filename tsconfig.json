@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "module": "commonjs",
+      "lib": ["es2015", "es2016", "es2017", "es2018", "es2019", "es2020", "es2021", "es2022", "dom"],
+      "strict": true,
+      "esModuleInterop": true,
+      "outDir": "./dist",
+      "rootDir": "./",
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true, // Skip type-checking of declaration files (e.g., third-party libraries)
+      "noImplicitAny": true, // Ensure no variables have the implicit `any` type
+      "moduleResolution": "node", // Use Node.js-style module resolution
+      "resolveJsonModule": true // Allow importing JSON files
+    },
+    "include": ["**/*.ts"]
+  }
