@@ -12,14 +12,6 @@ var TodoList = /** @class */ (function () {
         };
         this.todos.push(newTodo);
     };
-    // completeTodo(id: number): void {
-    //   const todo = this.todos.find(todo => todo.id === id);
-    //   if (todo) {
-    //     todo.completed = true;
-    //   } else {
-    //     console.log(`Todo with ID ${id} not found.`);
-    //   }
-    // }
     TodoList.prototype.completeTodo = function (id) {
         var todo;
         for (var _i = 0, _a = this.todos; _i < _a.length; _i++) {
@@ -51,17 +43,6 @@ var TodoList = /** @class */ (function () {
     TodoList.prototype.filterTodos = function (completed) {
         return this.todos.filter(function (todo) { return todo.completed === completed; });
     };
-    // updateTodoTask(id: number, newTask: string, newDueDate?: Date): void {
-    //   const todo = this.todos.find(todo => todo.id === id);
-    //   if (todo) {
-    //     todo.task = newTask;
-    //     if (newDueDate) {
-    //       todo.dueDate = newDueDate;
-    //     }
-    //   } else {
-    //     console.log(`Todo with ID ${id} not found.`);
-    //   }
-    // }
     TodoList.prototype.updateTodoTask = function (id, newTask, newDueDate) {
         var todoFound = false; // Flag to track if the todo is found
         for (var _i = 0, _a = this.todos; _i < _a.length; _i++) {
@@ -84,16 +65,23 @@ var TodoList = /** @class */ (function () {
     };
     return TodoList;
 }());
-var todoList = new TodoList();
-todoList.addTodo("Learn TypeScript", new Date("2023-12-31"));
-todoList.addTodo("Check out Udemy course", new Date("2023-11-15"));
-todoList.addTodo("Write code", new Date("2023-10-30"));
-console.log("Initial Todos:");
-todoList.listTodos();
+var todoList = new TodoList(); //This  adds the todos
+todoList.addTodo("Learn TypeScript", new Date("2025-02-28"));
+todoList.addTodo("Check out Udemy course", new Date("2025-03-05"));
+todoList.addTodo("Write code", new Date("2025-03-10"));
+todoList.addTodo("Go to Church in the evening", new Date("2025-03-02"));
+todoList.listTodos(); //All the todos we added appear here
+console.log("--------------------------------------------------------------");
+console.log("Here, the ID chosen toggles from false to 'true'");
+todoList.completeTodo(2); // Here, completed todos toggles to true.
+todoList.listTodos(); // We check the todo array again confirm.
+console.log("--------------------------------------------------------------");
+todoList.removeTodo(1);
+todoList.listTodos(); // The todo with the id called has been removed when we return all the todos.
+console.log("--------------------------------------------------------------");
 todoList.updateTodoTask(1, "Master TypeScript", new Date("2024-01-15"));
-todoList.completeTodo(3);
-console.log("Updated Todos:");
-todoList.listTodos();
+todoList.listTodos(); // Here, a task was chosen and modified.
+console.log("--------------------------------------------------------------");
 todoList.clearCompletedTodos();
 console.log("After clearing completed todos:");
 todoList.listTodos();
